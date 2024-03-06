@@ -17,8 +17,18 @@ export function getImages(QUERY) {
       return response.json();
     })
     .then(data => {
+      container.style.display = 'none';
       console.log(data);
-      // container.style.display = 'none';
+      if (data.hits.length === 0) {
+        iziToast.error({
+          title: 'Error',
+          timeout: 3000,
+          position: 'bottomRight',
+          message:
+            'Sorry, there are no images matching your search query. Please try again!',
+        });
+      }
+      return data;
     })
     .catch(error => console.log(`Error: ${error}`));
 }
