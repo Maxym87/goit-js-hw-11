@@ -6,6 +6,7 @@ const URL = 'https://pixabay.com/api/';
 const container = document.querySelector('.container');
 
 export function getImages(QUERY) {
+
   container.style.display = 'block';
   const link = `${URL}?key=${KEY}&q=${QUERY}&image_type=photo&orientation=horizontal&savesearch=true`;
 
@@ -18,7 +19,7 @@ export function getImages(QUERY) {
     })
     .then(data => {
       container.style.display = 'none';
-      console.log(data);
+
       if (data.hits.length === 0) {
         iziToast.error({
           title: 'Error',
