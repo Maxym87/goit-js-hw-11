@@ -1,10 +1,8 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const gallery = document.querySelector('.gallery');
-
 export function createMarkup(images) {
-  const markup = images.hits
+  return images.hits
     .map(
       ({
         largeImageURL,
@@ -42,5 +40,4 @@ export function createMarkup(images) {
             </li>`
     )
     .join('');
-  gallery.innerHTML = markup;
 }
