@@ -20,7 +20,7 @@ export function createMarkup(images) {
                   src="${webformatURL}" 
                   alt="${tags}" 
                   width="360px" 
-                  height="260px"
+                  height="200px"
                 />
               </a>
               <div class="gallery-info">

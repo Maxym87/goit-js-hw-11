@@ -2,6 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import cross from './img/cross.svg';
 
 import { getImages } from './js/pixabay-api';
 import { createMarkup } from './js/render-functions';
@@ -25,9 +26,11 @@ form.addEventListener('submit', event => {
   const userInput = input.value.trim();
   if (userInput === '') {
     iziToast.show({
-      title: 'Error',
-      color: 'yellow',
-      message: 'Please search for something',
+      iconUrl: cross,
+      color: '#EF4040',
+      messageColor: '#FFF',
+      message:
+        'Sorry, there are no images matching your search query. Please, try again!',
     });
     container.style.display = 'none';
     return;

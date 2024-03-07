@@ -1,5 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import cross from '../img/cross.svg';
 
 const KEY = '42680318-96c21e5764acdc13d94b87bb9';
 const URL = 'https://pixabay.com/api/';
@@ -19,9 +20,11 @@ export function getImages(QUERY) {
     .then(data => {
       if (data.hits.length === 0) {
         iziToast.error({
-          title: 'Error',
+          iconUrl: cross,
           timeout: 3000,
-          position: 'bottomRight',
+          position: 'topRight',
+          messageColor: '#FFF',
+          backgroundColor: '#FF544B',
           message:
             'Sorry, there are no images matching your search query. Please try again!',
         });
